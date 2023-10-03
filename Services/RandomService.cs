@@ -3,13 +3,16 @@
 	public class RandomService
 	{
 		int seed;
+		Random num;
+
 		public RandomService()
 		{
 			seed = Guid.NewGuid().GetHashCode();
+			num = new Random(seed);
 		}
 		public int GetRandom()
 		{
-			return new Random(seed).Next(100);
+			return num.Next(100);			
 		}
 
 	}
