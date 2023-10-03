@@ -1,12 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProvaPub.Interfaces;
 using ProvaPub.Models;
 using ProvaPub.Repository;
 
 namespace ProvaPub.Services
 {
-    public class CustomerService
+    public class CustomerService : ICustomerService
     {
-        TestDbContext _ctx;
+        private readonly TestDbContext _ctx;
 
         public CustomerService(TestDbContext ctx)
         {

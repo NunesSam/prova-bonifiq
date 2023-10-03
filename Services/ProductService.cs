@@ -1,17 +1,18 @@
-﻿using ProvaPub.Models;
+﻿using ProvaPub.Interfaces;
+using ProvaPub.Models;
 using ProvaPub.Repository;
 
 namespace ProvaPub.Services
 {
-	public class ProductService
-	{
-		TestDbContext _ctx;
+	public class ProductService : IProductService
+    {
+        private readonly TestDbContext _ctx;
 
-		public ProductService(TestDbContext ctx)
-		{
-			_ctx = ctx;
-		}
-
+        public ProductService(TestDbContext ctx)
+        {
+            _ctx = ctx;
+        }
+        
 		public ProductList  ListProducts(int page)
 		{
             int pageSize = 10;
